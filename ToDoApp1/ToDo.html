@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet"  href="css/bootstrap.css" />
+	<link rel="stylesheet" href="ToDo.css">
+	<title> My Todo App </title> 
+</head>
+
+<body>
+	<div id="div1">
+		<h2>My Todo App</h2>
+	 	<input type="text" id="inputtext" class="form-control" placeholder="What you want to do?">
+	</div>
+	
+	<div id="div2" class="hide1">
+	 	<button type="button" class="btn btn-primary" id="all">All</button>		
+	 	<button type="button" class="btn btn-primary" id ="completed">Completed</button>
+ 		<button type="button" class="btn btn-primary" id ="pending">Pending</button> <br />
+		<input type ="checkbox"  id="selectall">select/deselect</input>
+	</div>
+
+	<div id="append1"> 
+	</div>
+
+    <div class="div4">
+       <button type="button"  class="btn btn-primary" id="remove-completed">Remove completed</button>
+    </div>	
+
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="ToDo.js"></script>
+</body>
+</html>

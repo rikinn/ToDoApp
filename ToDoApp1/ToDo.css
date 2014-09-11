@@ -1,0 +1,37 @@
+body{
+	width:500px;
+	height:500px;
+	border:1px solid #437A9E;
+	margin:50px;
+	padding:20px;
+}
+.doRed {
+	color:red;
+}
+.doRed1{
+	color:red;
+}
+.div4{
+	float:right; 
+}
+
+#delete1{
+	display: none;
+	float: right;
+}
+.hoover1:hover #delete1{
+	display: inline-block;
+}
+#div1{
+	border-bottom:4px solid black;
+	padding-bottom:20px; 
+}
+#div2{
+	padding-top:10px;
+}
+#append1 .hoover1{
+	font-weight: bold;
+	font-size: 20px;
+	padding:10px;
+	border-bottom: 1px solid black;
+}
