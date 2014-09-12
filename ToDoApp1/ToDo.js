@@ -1,13 +1,18 @@
 $(document).ready(function(){
 	$('.hide1').hide();
 	$('#remove-completed').hide();
-//Appending checkbox and text
-	$('#inputtext').bind('keypress',function(i){
+//Appending checkbox and text using handler bar
+	
+$('#inputtext').bind('keypress',function(i){
 		var a=$('#inputtext').val();
 		if(i.which == 13 && a==''){
 			alert("Please add some text")
 		}else if(i.which == 13 && a!== ''){
-			$('#append1').append("<div class='hoover1'><input type='checkbox' class='input1' /> <span>" + a + "</span><span class='glyphicon glyphicon-remove' id='delete1'></span></div>");
+			//created handlebars templates
+			var abc={ tweet:a }
+			var b= Handlebars.compile( $('#template').html() );
+
+			$('#append1').append("<div class='hoover1'><input type='checkbox' class='input1' /> <span>" + b(abc) + "</span> <span class='glyphicon glyphicon-remove' id='delete1'></span> </div>");
 			$('#inputtext').val('');
 			$('.hide1').show();
 			$('#remove-completed').show();

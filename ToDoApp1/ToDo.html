@@ -8,6 +8,12 @@
 </head>
 
 <body>
+	<ul>
+		<script id="template" type="text/x-handlebars-template">
+			{{tweet}}
+		</script>
+  	</ul>
+
 	<div id="div1">
 		<h2>My Todo App</h2>
 	 	<input type="text" id="inputtext" class="form-control" placeholder="What you want to do?">
@@ -26,9 +32,16 @@
     <div class="div4">
        <button type="button"  class="btn btn-primary" id="remove-completed">Remove completed</button>
     </div>	
-
     
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="handlebars.js"></script>
 <script src="ToDo.js"></script>
+	
+	<div>
+		<script id="template" type="text/x-handlebars-template">
+			<p>{{}}</p>
+		</script>
+	</div>
+
 </body>
 </html>

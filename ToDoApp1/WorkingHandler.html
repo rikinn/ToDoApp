@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet"  href="css/bootstrap.css" />
+	<link rel="stylesheet" href="ToDo.css">
+</head>
+<body>
+	<input type="text" id="inputtext" class="form-control" placeholder="What you want to do?">
+
+  <ul class="handle1">
+
+	<script id="template" type="text/x-handlebars-template">
+		<div>{{tweet}}</div>
+	</script>
+  </ul>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="handlebars.js"></script>
+
+<script>
+$('#inputtext').on('keypress',function(i){
+
+	var a=$('#inputtext').val();
+	if(i.which == 13 && a==''){
+		alert("Please add some text")
+	}else if(i.which == 13 && a!== ''){
+			var abc ={
+			tweet:a,
+			}
+
+		var b= Handlebars.compile( $('#template').html() );
+		$(document.body).append("<div class='hoover1'><input type='checkbox' class='input1' /> <span>" + b(abc) + "</span><span class='glyphicon glyphicon-remove' id='delete1'></span></div>");
+	}
+});
+
+</script>
+
+
+</body>
+</html>
