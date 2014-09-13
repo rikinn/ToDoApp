@@ -6,41 +6,34 @@
 </head>
 <body>
 	<input type="text" id="inputtext" class="form-control" placeholder="What you want to do?">
+  <ul>
 
-  <ul class="handle1">
 	<script id="template" type="text/x-handlebars-template">
-
-		<div>
-			<input type='checkbox' class='input1' />
-			<span> {{tweet}} </span>
-			<span class='glyphicon glyphicon-remove' id='delete1'>
-			</span>
-		</div>
+		<div>{{tweet}}</div>
 	</script>
   </ul>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="handlebars.js"></script>
 
-
 <script>
-	(function(){
-		var a=$('#inputtext').val();
+$('#inputtext').on('keypress',function(i){
 
-
-		var abc ={
+	var a=$('#inputtext').val();
+	if(i.which == 13 && a==''){
+		alert("Please add some text")
+	}else if(i.which == 13 && a!== ''){
+			var abc ={
 			tweet:a,
 			}
-				
-		var source= $('#template').html();
-		var b= Handlebars.compile(source);
 
-		$('div').append( b(source));
-		console.log(b);
-})();
+		var b= Handlebars.compile( $('#template').html() );
+		$(document.body).append("<div class='hoover1'><input type='checkbox' class='input1' /> <span>" + b(abc) + "</span><span class='glyphicon glyphicon-remove' id='delete1'></span></div>");
+	}
+});
 
 </script>
-<div>
-<div>
+
+
 </body>
 </html>

@@ -5,14 +5,20 @@ $(document).ready(function(){
 	
 $('#inputtext').bind('keypress',function(i){
 		var a=$('#inputtext').val();
+
 		if(i.which == 13 && a==''){
 			alert("Please add some text")
 		}else if(i.which == 13 && a!== ''){
-			//created handlebars templates
-			var abc={ tweet:a }
-			var b= Handlebars.compile( $('#template').html() );
+//created handlebars templates
+			var abc={ 
+				tweet:a,
+			}
+			var source= $('#template').html()
+			var b=Handlebars.compile(source);
 
-			$('#append1').append("<div class='hoover1'><input type='checkbox' class='input1' /> <span>" + b(abc) + "</span> <span class='glyphicon glyphicon-remove' id='delete1'></span> </div>");
+			$('#append1').append(b(abc));
+
+
 			$('#inputtext').val('');
 			$('.hide1').show();
 			$('#remove-completed').show();
